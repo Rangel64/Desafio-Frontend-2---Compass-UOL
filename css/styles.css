@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.first-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #252B42;
+    color: #fff;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 3px;
+    padding-top:9px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.contact-info{
+    display: flex;
+    padding: 10px;
+    gap:10px
+}
+
+.contact-info-child{
+    padding: 10px;
+}
+
+.promo{
+    font-weight: bold;
+    padding: 10px;
+}
+
+.social-icons {
+    font-weight: bold;
+    padding: 10px;
+}
+
+/* --------------------------------------------------- */
+
+.second-bar{
+    display: flex;
+    padding: 10px 24px;
+    border-bottom: 2px solid #eee;
+    flex: 1;
+}
+
+.nav-brand{
+    font-size: 24px;
+    font-weight: bold;
+    color: #252B42;
+    margin-right: 40px;
+    justify-content: left;
+}
+
+.nav-brand h3{
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.second-bar .navbar-collapse {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1; /* Isso permite que a navbar-collapse ocupe o espaço restante */
+}
+
+.second-bar .nav-bar-right {
+    display: flex;
+    gap: 15px;
+}
+
+.second-bar .nav-bar-right div span {
+    font-size: 16px;
+    color: #252B42;
+    cursor: pointer;
+}
+
+.second-bar .nav-bar-left {
+    display: flex;
+    align-items: center;
+   
+    font-size: 16px;
+    color: #23A6F0;
+    justify-content: flex-end;
+}
+
+.second-bar .nav-bar-left span {
+    cursor: pointer;
+}
+
+.icon-header{
+    background-size: cover;
+    padding: 15px;
+    cursor: pointer;
+}
+
