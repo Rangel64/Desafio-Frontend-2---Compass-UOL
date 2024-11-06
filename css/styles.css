@@ -25,30 +25,67 @@ body {
 .contact-info{
     display: flex;
     padding: 10px;
-    gap:10px
+    gap:10px;
+    align-items: center;
 }
 
 .contact-info-child{
+    display: flex;
+    align-items: center;
+    gap: 5px; 
+    font-weight: bold;
     padding: 10px;
 }
+
+.contact-info-child img {
+    width: 16px; 
+    height: 16px;
+}
+
 
 .promo{
     font-weight: bold;
     padding: 10px;
+    /* font-size: 24px; */
 }
 
-.social-icons {
+.social-container {
     font-weight: bold;
     padding: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }
+
+.social-container .social-icons{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-container .social-icon{
+    background-size: cover;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 1.5px;
+    cursor: pointer;
+}
+
+.social-container .social-icon img {
+    width:16px; /* Tamanho dos ícones */
+    height: 16px;
+}
+
 
 /* --------------------------------------------------- */
 
-.second-bar{
+.second-bar-web{
     display: flex;
     padding: 10px 24px;
     border-bottom: 2px solid #eee;
-    flex: 1;
+    flex: 10px;
+    gap: 40px;
 }
 
 .nav-brand{
@@ -64,35 +101,50 @@ body {
     padding-bottom: 8px;
 }
 
-.second-bar .navbar-collapse {
+.second-bar-web .navbar-collapse {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex: 1; /* Isso permite que a navbar-collapse ocupe o espaço restante */
 }
 
-.second-bar .nav-bar-right {
+.second-bar-web .nav-bar-right {
     display: flex;
     gap: 15px;
 }
 
-.second-bar .nav-bar-right div span {
+.second-bar-web .nav-bar-right .itens{
     font-size: 16px;
-    color: #252B42;
+    font-weight: bold;
+    color: #737373;
     cursor: pointer;
 }
 
-.second-bar .nav-bar-left {
+.second-bar-web .nav-bar-right .shop{
+    font-size: 16px;
+    color: #252B42;
+    cursor: pointer;
     display: flex;
     align-items: center;
-   
+    gap: 9px;
+}
+
+.second-bar-web .nav-bar-right .shop img {
+    width: 12px; 
+    margin-left: 2px;
+}
+
+.second-bar-web .nav-bar-left {
+    display: flex;
+    align-items: center;
     font-size: 16px;
     color: #23A6F0;
     justify-content: flex-end;
 }
 
-.second-bar .nav-bar-left span {
+.second-bar-web .nav-bar-left span {
     cursor: pointer;
+    font-weight: bold;
 }
 
 .icon-header{
@@ -101,3 +153,84 @@ body {
     cursor: pointer;
 }
 
+/* -------------------------------------------------------- */
+
+.mobile-nav{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px 0;
+}
+
+.navbar-icons{
+    display: flex;
+    align-items: center;
+}
+
+.navbar-icons img {
+    width: 24px;
+    height: 24px;
+    margin-left: 15px;
+    cursor: pointer;
+    color: #737373;
+}
+
+.mobile-nav a{
+    font-size:20px;
+    color: #737373;
+    text-decoration: none;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.mobile-nav.open{
+    display: flex;
+}
+
+.second-bar-mobile{
+    display: flex;
+    padding: 10px 24px;
+    /* border-bottom: 2px solid #eee; */
+    flex: 10px;
+    gap: 40px;
+    justify-content: space-between;
+    width: 100%;
+}
+
+@media (min-width: 768px){
+    .first-bar,
+    .navbar-collapse,
+    .nav-bar-right,
+    .nav-bar-left,
+    .second-bar-web{
+        display: flex;
+    }
+
+    .second-bar-mobile{
+        display: none;
+    }
+}
+
+@media (max-width: 768px){
+    .first-bar,
+    .navbar-collapse,
+    .nav-bar-right,
+    .nav-bar-left,
+    .second-bar-web{
+        display: none;
+    }
+
+    .second-bar-mobile{
+        display: flex;
+    }
+
+    .mobile-nav{
+        display: none;
+    }
+
+    .hamburger{
+        display: block;
+        cursor: pointer;
+    }
+}

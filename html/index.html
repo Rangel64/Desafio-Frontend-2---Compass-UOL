@@ -11,9 +11,11 @@
         <div class="first-bar">
             <div class="contact-info">
                 <div class="contact-info-child">
+                    <img src="/assets/phone.svg" alt="">
                     <span>(225) 555-0118</span>
                 </div>
                 <div class = "contact-info-child">
+                    <img src="/assets/message.svg" alt="">
                     <span>michelle.rivera@example.com</span>
                 </div>
             </div>
@@ -22,32 +24,46 @@
                 <span>Follow Us and get a chanche to win 80% off</span>
             </div>
 
-            <div class="social-icons">
+            <div class="social-container">
                 <span>Follow Us:</span>
+                <div class="social-icons">
+                    <div class="social-icon">
+                        <img class=".icon-header" src="\assets\instagram.svg" alt="">
+                    </div>
+                    <div class="social-icon">
+                        <img class=".icon-header" src="\assets\yt.svg" alt="">
+                    </div>
+                    <div class="social-icon">
+                        <img class=".icon-header" src="\assets\facebook.svg" alt="">
+                    </div>
+                    <div class="social-icon">
+                        <img class=".icon-header" src="\assets\twitter.svg" alt="">
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="second-bar">
+        <div class="second-bar-web">
             <div class="nav-brand">
                 <h3>Bandage</h3>
             </div>
             <div class="navbar-collapse">
                 <div class="nav-bar-right">
-                    <div>
+                    <div class = "itens">
                         <span>Home</span>
                     </div>
-                    <div>
+                    <div class = "shop">
                         <span>Shop</span>
                     </div>
-                    <div>
+                    <div class = "itens">
                         <span>About</span>
                     </div>
-                    <div>
+                    <div class = "itens">
                         <span>Blog</span>
                     </div>
-                    <div>
+                    <div class = "itens">
                         <span>Contact</span>
                     </div>
-                    <div>
+                    <div class = "itens">
                         <span>Pages</span>
                     </div>
                 </div>
@@ -69,8 +85,34 @@
                 </div>
             </div>  
         </div>
+
+        <div class="second-bar-mobile">
+            <div class="nav-brand">
+                <h3>Bandage</h3>
+            </div>
+            <div class="navbar-icons">
+                <img src="/assets/lupa-mobile.svg" alt="Search">
+                <img src="/assets/carrinho-mobile.svg" alt="Cart">
+                <img src="/assets/menu.svg" alt="Menu" class="hamburger" onclick="toggleMenu()">
+            </div>
+        </div>
+
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="#">Home</a>
+            <a href="#">Product</a>
+            <a href="#">Pricing</a>
+            <a href="#">Contact</a>
+        </nav> 
     </header>
 
+
+    
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("mobileNav").classList.toggle("open");
+        }
+    </script>
 
 </body>
 </html>
