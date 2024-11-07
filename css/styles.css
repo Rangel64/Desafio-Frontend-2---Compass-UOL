@@ -194,7 +194,6 @@ body {
 .second-bar-mobile{
     display: flex;
     padding: 10px 24px;
-    /* border-bottom: 2px solid #eee; */
     flex: 10px;
     gap: 40px;
     justify-content: space-between;
@@ -381,12 +380,12 @@ body {
         transform: translate(-50%, -50%);
         color: #fff;
         text-align: center;
-        width: 80%; /* Ajuste conforme necessário */
+        width: 80%; 
     }
     .text{
         align-items: center;
         gap: 35px;
-    } /* Espaçamento entre os itens */
+    } 
     .text .text2{
         font-size: 40px;
         max-width: 273px;
@@ -404,3 +403,77 @@ body {
     }
     
 }
+
+/* -------------------------------------------------------------------------------------------------- */
+/* footer */
+
+footer{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-container-1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-container-1 .container-2{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: flex;
+    gap: 578px;
+}
+
+.footer-container-1 .container-icons{
+    display: flex;
+    gap: 20px;
+    padding-left: 62px;
+    padding-right: 62px;
+}
+
+.footer-container-1 .title{
+    margin-right: 112px;
+    font-weight: bold;
+    color: #252B42;
+    font-size: 24px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+
+
+.footer-container-2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-container-2 .container-2{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: flex;
+    gap: 578px;
+}
+
+.footer-container-2 .container-icons{
+    display: flex;
+    gap: 20px;
+    padding-left: 62px;
+    padding-right: 62px;
+}
+
+.footer-container-2 .title{
+    margin-right: 112px;
+    font-weight: bold;
+    color: #252B42;
+    font-size: 24px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+
+.footer-container-3{
+    display: flex;
+    position: relative;
+
+}
+
