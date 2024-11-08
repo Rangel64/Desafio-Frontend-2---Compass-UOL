@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -5,7 +7,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .first-bar{
@@ -407,22 +409,31 @@ body {
 /* -------------------------------------------------------------------------------------------------- */
 /* footer */
 
-footer{
+
+.footer-container{
     display: flex;
     flex-direction: column;
+    /* max-width: 1100px; */
+    justify-content: center;
+    margin: auto;
 }
 
 .footer-container-1{
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #FAFAFA;
 }
 
-.footer-container-1 .container-2{
+.footer-container-1 .container{
+    width: 100%;
     padding-top: 40px;
     padding-bottom: 40px;
+    max-width: 1100px;
     display: flex;
-    gap: 578px;
+    justify-content: space-between;
+    border-bottom: 1px solid #E6E6E6;
 }
 
 .footer-container-1 .container-icons{
@@ -430,50 +441,146 @@ footer{
     gap: 20px;
     padding-left: 62px;
     padding-right: 62px;
+
 }
 
 .footer-container-1 .title{
-    margin-right: 112px;
+    /* margin-right: 161px; */
     font-weight: bold;
     color: #252B42;
     font-size: 24px;
     padding-top: 13px;
     padding-bottom: 13px;
+
 }
 
 
 .footer-container-2{
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.footer-container-2 .container-2{
-    padding-top: 40px;
-    padding-bottom: 40px;
+.footer-container-2 .container{
+    width: 100%;
+    max-width: 1100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     display: flex;
-    gap: 578px;
+    justify-content: space-between;
 }
 
-.footer-container-2 .container-icons{
+.footer-container-2 .container-card{
     display: flex;
+    flex-direction: column;
     gap: 20px;
-    padding-left: 62px;
-    padding-right: 62px;
 }
 
 .footer-container-2 .title{
-    margin-right: 112px;
+    font-size: 18px;
     font-weight: bold;
     color: #252B42;
-    font-size: 24px;
-    padding-top: 13px;
-    padding-bottom: 13px;
+}
+
+.footer-container-2 .container-card-info{
+    display: flex; 
+    flex-direction: column; 
+    /* width: 152px; */
+    gap: 10px;
+    color: #737373;
+    font-weight: bold;
+}
+
+.footer-container-2 .form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer-container-2 .container-form-field{
+    display: flex; 
+    flex-direction: column; 
+    gap: 1px;
+    color: #737373;
+}
+
+.footer-container-2 form {
+    height:58px;
+    width:321px;
+    display: flex;
+}
+
+.footer-container-2 input {
+    height:58px;
+    width:204px;
+    padding-left:10px;
+    font-size:14px;
+    background-color: #f0f0f0;
+    border: 1px solid #d3d3d3;
+}
+
+.footer-container-2 button {
+    height:58px;
+    width:117px;
+    font-size:14px;
+    color: #FFFFFF;
+    background-color: #23A6F0;
+    border:#23A6F0
 }
 
 .footer-container-3{
+    width: 100%;
     display: flex;
-    position: relative;
-
+    align-items: center;
+    justify-content: center;
+    
 }
 
+.footer-container-3 .container{
+    width: 100%;
+    max-width: 1100px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-container-3 .title{
+    font-weight: bold;
+    color: #737373;
+    font-size: 14px;
+}
+
+@media (max-width: 955px){
+    .footer-container{
+        max-width: 325px;
+    }
+
+    .footer-container-1 .container{
+        display: flex;
+        max-width: 325px;
+        flex-direction: column;
+        gap:12px;
+        border-bottom: 0px solid #E6E6E6;
+    }
+
+    .footer-container-1 .container-icons{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .footer-container-2 .container{
+
+        padding-top: 70px;
+        padding-bottom: 70px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer-container-3 .title{
+        text-align: center;
+    }
+
+}
