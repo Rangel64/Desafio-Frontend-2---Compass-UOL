@@ -103,6 +103,8 @@ function validateEmail() {
         return false;
     }
     
+    emailField.value = ""
+
     showPopup();
     
     return false;
