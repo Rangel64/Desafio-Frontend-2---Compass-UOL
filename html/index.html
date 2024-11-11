@@ -48,22 +48,28 @@
             </div>
             <div class="navbar-collapse">
                 <div class="nav-bar-right">
-                    <div class = "itens">
+                    <div class="itens">
                         <span>Home</span>
                     </div>
-                    <div class = "shop">
+                    <div class="shop">
                         <span>Shop</span>
+                        <!-- Submenu para Shop -->
+                        <div class="submenu">
+                            <a href="#">Shop Category 1</a>
+                            <a href="#">Shop Category 2</a>
+                            <a href="#">Shop Category 3</a>
+                        </div>
                     </div>
-                    <div class = "itens">
+                    <div class="itens">
                         <span>About</span>
                     </div>
-                    <div class = "itens">
+                    <div class="itens">
                         <span>Blog</span>
                     </div>
-                    <div class = "itens">
+                    <div class="itens">
                         <span>Contact</span>
                     </div>
-                    <div class = "itens">
+                    <div class="itens">
                         <span>Pages</span>
                     </div>
                 </div>
@@ -148,11 +154,11 @@
                     </span>
 
                     <span class="text2">
-                        NEW COLLECTION
+                        Vita Classic Product
                     </span>
                     
                     <span class="text3">
-                        We know how large objects will act, but things on a small scale.
+                        We know how large objects will act, We know how are objects will act, We know
                     </span>
 
                     <button class = "slide-button">
@@ -509,7 +515,7 @@
                     </div>
                 </div>
                 <div class="container-image">
-                    <img src="/assets/slide-show-2/shop-hero-2-png-picture-1.png" alt="">
+                    <img src="/assets//session-3/asian-woman-man-with-winter-clothes 1.png" alt="">
                 </div>
             </div>
         </div>
@@ -775,15 +781,21 @@
                             </div>
                             <div class="container-form-field">
                                 <div style = "height: 100%; width: 100%;">
-                                    <form action="">
-                                        <input class="text-field" type="text" placeholder="Your Email">
-                                        <button>Subscribe</button>
+                                    <form onsubmit="return validateEmail()">
+                                        <input id="emailField" class="text-field" type="text" placeholder="Your Email">
+                                        <button type="submit">Subscribe</button>
                                     </form>
                                 </div>
                                 <span style="margin-top: 10px; margin-bottom: 10px;">
                                     Lore imp sum dolor Amit
-                                </span>
+                                </span> 
                             </div>
+                        </div>
+                    </div>
+                    <div id="popup" class="popup" style="display: none;">
+                        <div class="popup-content" onclick="closePopup()">
+                            <span id="closePopup" class="close">&times;</span>
+                            <p>Email inscrito com sucesso!</p>
                         </div>
                     </div>
                 </div>
@@ -798,79 +810,7 @@
         </div>
     </footer>
 
-    <script>
-        function toggleMenu() {
-            document.getElementById("mobileNav").classList.toggle("open");
-        }
-
-        let slideIndex = 1;
-        showSlides(slideIndex);
-
-       
-        function plusSlide(n) {
-            showSlides(slideIndex += n);
-        }
-
-        
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
-
-        function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("mySlide");
-            let dots = document.getElementsByClassName("dot");
-
-            if (n > slides.length) { slideIndex = 1 }
-            if (n < 1) { slideIndex = slides.length }
-
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
-            }
-            
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-
-            slides[slideIndex-1].style.display = "block";  
-            dots[slideIndex-1].className += " active";
-        }
-
-        let slideIndex2 = 1;
-        showSlides2(slideIndex2);
-
-        function plusSlide2(n) {
-            showSlides2(slideIndex2 += n);
-        }
-
-        function currentSlide2(n) {
-            showSlides2(slideIndex2 = n);
-        }
-
-        function showSlides2(n) {
-            let i;
-            let slides = document.getElementsByClassName("mySlide2");
-            let dots = document.getElementsByClassName("dot2");
-
-            if (n > slides.length) { slideIndex2 = 1 }
-            if (n < 1) { slideIndex2 = slides.length }
-
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
-            }
-            
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active2", "");
-            }
-
-            slides[slideIndex2 - 1].style.display = "block";  
-            dots[slideIndex2 - 1].className += " active2";
-        }
-
-        
-        //setInterval(() => {plusSlide(1);}, 5000); 
-
-    </script>
+    <script src="/script/index.js"></script>
 
 </body>
 </html>

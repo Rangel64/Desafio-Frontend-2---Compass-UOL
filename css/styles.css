@@ -84,7 +84,11 @@ body {
 
 .second-bar-web{
     display: flex;
-    padding: 10px 24px;
+    /* padding: 10px 40px; */
+    padding-left: 40px;
+    padding-right: 24px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     border-bottom: 2px solid #eee;
     flex: 10px;
     gap: 40px;
@@ -144,11 +148,91 @@ body {
     justify-content: flex-end;
 }
 
-.second-bar-web .nav-bar-left span {
-    cursor: pointer;
+/* Estilos de animação básica */
+.second-bar-web .nav-bar-right .itens span {
+    font-size: 16px;
     font-weight: bold;
+    color: #737373;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
+/* Efeito de hover para mudar cor e escala */
+.second-bar-web .nav-bar-right .itens span:hover {
+    color: #252B42; /* Muda a cor no hover */
+    transform: scale(1.1); /* Aumenta levemente o tamanho */
+}
+
+/* Efeito de sublinhado animado */
+.second-bar-web .nav-bar-right .itens span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -3px;
+    height: 2px;
+    background-color: #23A6F0; /* Cor do sublinhado */
+    transform: scaleX(0); /* Oculto inicialmente */
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+/* Exibe o sublinhado no hover */
+.second-bar-web .nav-bar-right .itens span:hover::after {
+    transform: scaleX(1); /* Expande o sublinhado */
+    transform-origin: left;
+}
+
+/* Estilo do item "Shop" com seta */
+.shop span::after {
+    content: "▼"; /* Seta para baixo */
+    font-size: 12px;
+    margin-left: 5px;
+    color: #737373;
+    transition: transform 0.3s ease;
+}
+
+/* Submenu e estilos de seta */
+.shop {
+    position: relative;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 10px 0;
+    border-radius: 5px;
+    z-index: 1000;
+    min-width: 150px;
+}
+
+.submenu a {
+    display: block;
+    padding: 10px 20px;
+    color: #737373;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.submenu a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Exibe o submenu ao passar o mouse sobre "Shop" */
+.shop:hover .submenu {
+    display: block;
+}
+
+/* Gira a seta para cima ao passar o mouse */
+.shop:hover span::after {
+    transform: rotate(180deg); /* Gira a seta para indicar que o submenu está aberto */
+}
 .icon-header{
     background-size: cover;
     padding: 15px;
@@ -166,6 +250,7 @@ body {
     gap: 30px;
     height: 450px;
     justify-content: center;
+
 }
 
 .navbar-icons{
@@ -277,8 +362,10 @@ body {
 .text-container {
     color: #fff;
     position: absolute;
-    top: 10%;
-    left: 10%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1187px;
     padding-top: 112px;
     padding-bottom: 112px;
 }
@@ -310,7 +397,8 @@ body {
    font-weight: normal;
 }
 
-.text .slide-button{
+/* Estilo básico do botão */
+.text .slide-button {
     height: 62px;
     width: 228px;
     background-color: #2DC071;
@@ -319,6 +407,14 @@ body {
     font-weight: bold;
     font-size: 24px;
     color: #fff;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito de hover */
+.text .slide-button:hover {
+    background-color: #28a863; /* Sombra mais escura no hover */
+    transform: scale(1.05); /* Aumenta levemente o botão */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
 }
 
 .prev, .next {
@@ -373,6 +469,15 @@ body {
     opacity: 1;
 }
 
+/* Efeito de desvanecimento para os slides */
+.fade {
+    animation: fadeEffect 1s ease; /* Define a animação de fade */
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
 
 @media (max-width: 1060px){
     .text-container{
@@ -507,16 +612,26 @@ body {
 }
 
 
-.text2 .slide-button2{
-    height: 52px;
-    width: 184px;
+/* Estilo básico do botão */
+.text2 .slide-button2 {
+    height: 62px;
+    width: 228px;
     background-color: #2DC071;
     border-radius: 5px;
     border: none;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 24px;
     color: #fff;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+/* Efeito de hover */
+.text2 .slide-button2:hover {
+    background-color: #28a863; /* Sombra mais escura no hover */
+    transform: scale(1.05); /* Aumenta levemente o botão */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
+}
+
 
 .prev2, .next2 {
     cursor: pointer;
@@ -700,6 +815,42 @@ body {
     font-weight: bold;
 }
 
+/* Estilo inicial dos spans */
+.footer-container-2 .container-card-info span {
+    color: #737373;
+    cursor: pointer;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Efeito de hover para mudar a cor e deslocamento */
+.footer-container-2 .container-card-info span:hover {
+    color: #252B42; /* Muda a cor no hover */
+    transform: translateY(-3px); /* Move o texto para cima */
+}
+
+/* Efeito de sublinhado animado */
+.footer-container-2 .container-card-info span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 2px;
+    background-color: #252B42; /* Cor do sublinhado */
+    transform: scaleX(0); /* Inicialmente escondido */
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+/* Exibe o sublinhado ao passar o mouse */
+.footer-container-2 .container-card-info span:hover::after {
+    transform: scaleX(1); /* Expande o sublinhado */
+    transform-origin: left;
+}
+
 .footer-container-2 .form{
     display: flex;
     flex-direction: column;
@@ -872,6 +1023,31 @@ body {
     color: #252B42;
 }
 
+/* Animação para os itens */
+.editors-pick .itens-1:hover .img-itens,
+.editors-pick .itens-2:hover .img-itens,
+.editors-pick .itens-3:hover .img-itens-2,
+.editors-pick .itens-4:hover .img-itens-2 {
+    transform: scale(1.05); /* Efeito de zoom */
+    transition: transform 0.3s ease;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.editors-pick .itens-1:hover .item-text,
+.editors-pick .itens-2:hover .item-text,
+.editors-pick .itens-3:hover .item-text,
+.editors-pick .itens-4:hover .item-text {
+    opacity: 1; /* Torna o texto mais visível */
+    transform: translate(-10%, -20%); /* Ajuste na posição */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Estilo inicial para o texto */
+.editors-pick .item-text {
+    opacity: 0.8; /* Opacidade inicial */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
 @media (max-width: 1060px){
     
     .editors-pick .sub-title{
@@ -1030,6 +1206,16 @@ body {
     gap: 6px;
 }
 
+/* Estilo básico dos cards */
+.bestseller-products .item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Animação ao passar o mouse */
+.bestseller-products .item:hover {
+    transform: scale(1.05); /* Aumenta o tamanho em 5% */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15); /* Sombra para efeito de elevação */
+}
 
 @media (max-width: 1060px){
     
@@ -1125,6 +1311,43 @@ body {
     height: 682px;
 }
 
+/* Animação para o botão "BUY NOW" */
+.session-3 .button-1 {
+    width: 156px;
+    height: 52px;
+    background-color: #2DC071;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.session-3 .button-1:hover {
+    background-color: #28a863; /* Sombra mais escura no hover */
+    transform: scale(1.05); /* Aumenta levemente o tamanho */
+}
+
+/* Animação para o botão "READ MORE" */
+.session-3 .button-2 {
+    width: 156px;
+    height: 52px;
+    border: 1px solid #2DC071;
+    color: #2DC071;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 5px;
+    background-color: transparent;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.session-3 .button-2:hover {
+    background-color: #2DC071; /* Fundo verde no hover */
+    color: #fff; /* Texto branco no hover */
+    transform: scale(1.05); /* Aumenta levemente o tamanho */
+}
+
 
 .session-3-mobile{
     display: none;
@@ -1139,26 +1362,43 @@ body {
     justify-content: center;
 }
 
-.session-3-mobile .button-1{
+/* Animação para o botão "BUY NOW" */
+.session-3-mobile .button-1 {
     width: 156px;
-    height:52px;
+    height: 52px;
     background-color: #23A6F0;
-    border: 0px;
+    border: none;
     color: #fff;
     font-weight: bold;
-    font-size:14px;
+    font-size: 14px;
     border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.session-3-mobile .button-2{
+.session-3-mobile .button-1:hover {
+    background-color: #23A6F0; /* Sombra mais escura no hover */
+    transform: scale(1.05); /* Aumenta levemente o tamanho */
+}
+
+/* Animação para o botão "READ MORE" */
+.session-3-mobile .button-2 {
     width: 156px;
-    height:52px;
+    height: 52px;
     border: 1px solid #23A6F0;
     color: #23A6F0;
     font-weight: bold;
-    font-size:14px;
+    font-size: 14px;
     border-radius: 5px;
+    background-color: transparent;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
+
+.session-3-mobile .button-2:hover {
+    background-color: #23A6F0; /* Fundo verde no hover */
+    color: #fff; /* Texto branco no hover */
+    transform: scale(1.05); /* Aumenta levemente o tamanho */
+}
+
 
 .session-3-mobile .text-1{
     color:#BDBDBD;
@@ -1285,6 +1525,12 @@ body {
 .featured-posts .item{
     display: flex;
     flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-posts .item:hover {
+    transform: scale(1.05); /* Aumenta o card em 5% */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra para destaque */
 }
 
 .featured-posts .description{
@@ -1396,4 +1642,34 @@ body {
         text-align: center;
     }
 
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    width: 300px;
+    cursor: pointer;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
 }
